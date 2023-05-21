@@ -30,6 +30,10 @@ class Livre
     #[ORM\JoinColumn(nullable: false)]
     private ?Auteur $auteur_id = null;
 
+    #[ORM\ManyToOne]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Editeur $editeur_id = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -91,6 +95,18 @@ class Livre
     public function setAuteur(?Auteur $auteur_id): self
     {
         $this->auteur_id = $auteur_id;
+
+        return $this;
+    }
+
+    public function getEditeurId(): ?Editeur
+    {
+        return $this->editeur_id;
+    }
+
+    public function setEditeurId(?Editeur $editeur_id): self
+    {
+        $this->editeur_id = $editeur_id;
 
         return $this;
     }
