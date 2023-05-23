@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Auteur;
 use App\Entity\Editeur;
 use App\Entity\Genre;
+use App\Entity\Usure;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -49,5 +50,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Genre', 'fas fa-list', Genre::class);
         yield MenuItem::linkToCrud('Editeur', 'fas fa-list', Editeur::class);
         yield MenuItem::linkToCrud('Auteur', 'fas fa-list', Auteur::class);
+        yield MenuItem::linkToCrud('Usure', 'fas fa-list', Usure::class);
     }
 }
