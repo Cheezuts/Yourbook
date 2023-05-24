@@ -17,13 +17,18 @@ class Exemplaire
     #[ORM\JoinColumn(nullable: false)]
     private ?Usure $usure = null;
 
-    #[ORM\ManyToOne]
+    #[ORM\ManyToOne(inversedBy: 'exemplaires')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Stock $stock = null;
 
     #[ORM\ManyToOne]
     #[ORM\JoinColumn(nullable: false)]
     private ?Livre $livre = null;
+
+    public function __toString()
+    {
+        return $this->getId()." - ".$this->getLivre();
+    }
 
     public function getId(): ?int
     {
