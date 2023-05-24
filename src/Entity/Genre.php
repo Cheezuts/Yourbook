@@ -38,3 +38,4 @@ class Genre
         return $this;
     }
 }
+

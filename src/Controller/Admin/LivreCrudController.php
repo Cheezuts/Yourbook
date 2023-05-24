@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Livre;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 
@@ -19,7 +20,7 @@ class LivreCrudController extends AbstractCrudController
         yield from parent::configureFields($pageName);
         yield AssociationField::new('auteur');
         yield AssociationField::new('editeur');
-        yield AssociationField::new('genre');
+        yield AssociationField::new('genres');
     }
     
 }
